@@ -8,20 +8,37 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint . --ext .js",
-    "dev": "nodemon index.js --exec \"npm run lint && node\""
+    "dev": "nodemon index.js --exec \"npm run lint && node\"",
+    "test": "jest --setupFiles dotenv/config"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "standard": {
+    "parser": "@babel/eslint-parser"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
+    "@babel/eslint-parser": "^7.14.4",
+    "@babel/plugin-proposal-throw-expressions": "^7.12.13",
     "@babel/plugin-transform-modules-commonjs": "^7.14.0",
     "@babel/plugin-transform-runtime": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
     "@babel/register": "^7.13.16",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.0.2",
     "babel-plugin-root-import": "^6.6.0",
     "eslint": "^7.27.0",
     "eslint-config-google": "^0.14.0",
+    "jest": "^27.0.4",
     "nodemon": "^2.0.7"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "axios-cache-adapter": "^2.7.3",
+    "date-fns": "^2.22.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1"
   }

@@ -56,6 +56,7 @@ class AlphaVantageData {
         ).toISOString(),
       };
     } catch (e) {
+      console.log(e);
       throw new Error(`An error occurred on getQuote: ${e}`);
     }
   }
